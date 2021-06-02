@@ -1,0 +1,52 @@
+body{
+	background-color:#fbf5f5;
+	margin:0px;
+}
+section{
+	width:100%;
+	display:flex;
+}
+.{
+	background-color:#cae2f8;
+}
+.content_left{
+	margin-top: 130px;
+	margin-left:130px;
+	display: flex;
+	justify-content:center;
+	
+	
+}
+.aria_texto{
+	margin:50px;
+	width:350px;
+	height:300px;
+	text-align: center;
+}
+.content{
+	margin-top:130px;
+	display: flex;
+	justify-content:center;
+	background-color:#fbf5f5;
+}
+.aria_de_cadastro{
+	margin:50px;
+	border: 2px solid #000;
+	border-radius:5px;
+	box-shadow: 2px 2px 3px;
+	width:350px;
+	height:300px;
+	text-align: center;
+	background-color:#c6d2f4;
+}
+.in1,.in2,.in3, .in4{
+	text-align:center;
+	margin:5px;
+	width:230px;
+	height:35px;
+	border-radius:10px;
+	font-size:15px;
+}
+.in4{
+	background-color:#0596c5;
+}
