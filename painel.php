@@ -48,6 +48,7 @@ include('veri_login.php');
 						<div class="alunos">
 							<h2>Alunos</h2>
 						</div>
+						<div><a href="cadastrodealunos.php">Cadastrar Aluno</a></Sdiv>
 					</div>
 				</div>
 
