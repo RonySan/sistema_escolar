@@ -3,8 +3,35 @@ body{
 	padding: 0px;
 
 }
-.barra{
+header{
+	display:flex;
+	justify-content:center;
 	width: 100%;
+	height: 50px;
+	background-color: #cbd9e7;
+}
+.container{
+	display: flex;
+    justify-content: space-between;
+    width: 990px;
+}
+nav ul{
+	display:flex;
+	list-style: none;
+	margin:0px;
+	padding: 0px;
+}
+nav a {
+	justify-content:rit;
+	display:block;
+	padding: 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color:#000;
+	font-family: arial;
+}
+.barra{
+	width:100%;
 	height:50px;
 	display: flex;
 	justify-content:center;
@@ -21,7 +48,39 @@ body{
 	width: 1076px;
 	height: 295px;
 	display: flex;
-	justify-content:center;
-	align-items:center;
+	
+}
+.cadastro{
+	padding:10px;
+}
+
+.form{
+	display: flex;
 	background-color: #b3acfa;
+	border: 2px solid #6861b1;
+
+}
+.cad{
+	flex:1;
+}
+.in1,.in2,.in3,.in4,.in5,.in6,.in7
+,.in8,.in9,.in10,.in11,.in12{
+	margin: 10px;
+}
+.int6{
+	margin-top: 10px
+}
+select{
+	margin-left: 10px;
+}
+
+.menudow{
+	display: flex;
+}
+.botao{
+	display: flex;
+}
+.contentmenu{
+	display: flex;
+	
 }

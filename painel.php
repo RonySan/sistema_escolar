@@ -3,7 +3,7 @@ session_start();
 include('veri_login.php');
 ?>
 <html>
-	<head>
+<head>
 	<title>Bem vindo Painel central </title>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
@@ -12,23 +12,22 @@ include('veri_login.php');
 </head>
 <header>
 	<div class="container">
-			<div class="logo">
-
-			</div>
-			<div class="menu">
-				<nav>
+		<div class="logo">
+		</div>
+		<div class="menu">
+			<nav>
 					
-					<ul>
-						<li><A HREF="">ola Rony!!</A></li>
-						<li><a href="">perfil</a></li>
-						<li>
-							<a href="logout.php">
-								<button>Sair</button>
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
+				<ul>
+					<li><A HREF="">ola Rony!!</A></li>
+					<li><a href="">perfil</a></li>
+					<li>
+						<a href="logout.php">
+							<button>Sair</button>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</div>
 </header>
 <body>
@@ -48,7 +47,12 @@ include('veri_login.php');
 						<div class="alunos">
 							<h2>Alunos</h2>
 						</div>
-						<div><a href="cadastrodealunos.php">Cadastrar Aluno</a></Sdiv>
+						<div>
+							<a href="cadastrodealunos.php">Cadastrar Aluno</a>
+						</div>
+						<div>
+							<a href="listagem_alunos.php">Lista de Alunos</a>
+						</div>
 					</div>
 				</div>
 
@@ -61,7 +65,7 @@ include('veri_login.php');
 					</div>
 				</div>
 			</div>
-	</div>
+		</div>
 	</section>
 	<div class="content">
 

@@ -26,3 +26,4 @@ if($conectar->query($msql) === true) {
 $conectar->close();
 header('location: cadastro.php');
 exit;
+?>
