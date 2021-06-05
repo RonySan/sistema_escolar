@@ -37,7 +37,7 @@ include('veri_login.php');
 <section class="geral">
 	<div class="content">
 		<div class="cadastro">
-			<form method="POST" action="cad_alunos.php" enctype="">
+			<form method="POST" action="cad_alunos.php" enctype="multipart/form-data">
 				<div class="form">
 					<div class="cad">
 							<input class="in1" type="text" name="nomealuno" required placeholder="Nome do Aluno"/>
@@ -53,8 +53,7 @@ include('veri_login.php');
 								<option>Outros</option>
 							</select>
 						<br/>
-						<input class="in4" type="text" name="Cod"
-						 pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2}) "required placeholder="CPF"/>
+						<input class="in4" type="email" name="email" required placeholder="email"/>
 
 						<input class="in5" type="text" name="matricula" required placeholder=""/>
 

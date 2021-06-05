@@ -70,7 +70,6 @@ include('veri_login.php');
 	<div class="content">
 
 	</div>
-	<script type="text/javascript" scr="assets/js/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript" scr="assets/js/bootstrap.bundle.js"></script>
+
 </body>
 </html>

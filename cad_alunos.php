@@ -5,7 +5,7 @@ include("conexao.php");
 $nomealuno = mysqli_real_escape_string( $conectar, trim($_POST['nomealuno']));
 $foto = mysqli_real_escape_string($conectar, ($_POST['foto']));
 $sexo = mysqli_real_escape_string($conectar, trim($_POST['sexo']));
-$cod = mysqli_real_escape_string($conectar, trim($_POST['cod']));
+$email = mysqli_real_escape_string($conectar, trim($_POST['email']));
 $turma = mysqli_real_escape_string($conectar, trim($_POST['turma']));
 $datamatricula = mysqli_real_escape_string($conectar, trim($_POST['datamatricula']));
 $npai = mysqli_real_escape_string($conectar, trim($_POST['npai']));
@@ -26,11 +26,11 @@ if($row['total'] == 1) {
 	exit;
 }
 */
-$sql = "INSERT INTO alunos (nome_aluno, sexo, cod_matricula, turma, data_matricula, nome_pai, nome_mae, data_nascimento, valor_mensalidade, endereco, matricula)
-					VALUES ('$nomealuno', '$sexo', '$cod', '$turma', '$datamatricula', '$npai', '$nmae', '$datanascimento', '$valor', '$endereco', '$matricula')"; 
+$sql = "INSERT INTO alunos (nome_aluno, sexo, email, turma, data_matricula, nome_pai, nome_mae, data_nascimento, valor_mensalidade, endereco, matricula)
+					VALUES ('$nomealuno', '$sexo', '$email', '$turma', '$datamatricula', '$npai', '$nmae', '$datanascimento', '$valor', '$endereco', '$matricula')"; 
 
 	if ($conectar->query($sql) === true) {
-		$_SESSION['STATUS_CADASTRO'] = true;
+		$_SESSION['STATUS_CADASTRO' . "Aluno cadastrado com susseco !! "] = true;
 	}
 $conectar->close();
 
