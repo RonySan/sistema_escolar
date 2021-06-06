@@ -16,7 +16,7 @@ $endereco = mysqli_real_escape_string($conectar, trim($_POST['endereco']));
 $matricula = mysqli_real_escape_string($conectar, trim($_POST['matricula']));
 /*
 
-$sql = "select count(*) as total from alunos where alunos = '$cod'";
+$sql = "select count(*) as total from alunos = '$email'";
 $result = mysqli_query($conectar, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -26,8 +26,8 @@ if($row['total'] == 1) {
 	exit;
 }
 */
-$sql = "INSERT INTO alunos (nome_aluno, sexo, email, turma, data_matricula, nome_pai, nome_mae, data_nascimento, valor_mensalidade, endereco, matricula)
-					VALUES ('$nomealuno', '$sexo', '$email', '$turma', '$datamatricula', '$npai', '$nmae', '$datanascimento', '$valor', '$endereco', '$matricula')"; 
+$sql = "INSERT INTO alunos (email, sexo, cod_matricula, matricula, turma, nome_pai, nome_mae, data_nascimento, valor_mensalidade, endereco, nome_aluno, foto)
+					VALUES ('$email', '$sexo', '$cod_matricula', '$matricula', '$turma', '$npai', '$nmae', '$datanascimento', '$valor', '$endereco', '$nomealuno', '$foto')"; 
 
 	if ($conectar->query($sql) === true) {
 		$_SESSION['STATUS_CADASTRO' . "Aluno cadastrado com susseco !! "] = true;

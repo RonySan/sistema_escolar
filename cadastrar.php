@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conectar.php");
+include("conexao.php");
 
 $nome = mysqli_real_escape_string($conectar, trim($_POST['nome']));
 $usuario = mysqli_real_escape_string($conectar, trim($_POST['usuario']));

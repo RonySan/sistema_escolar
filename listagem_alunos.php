@@ -50,7 +50,7 @@ include('conexao.php');
 
 	 	//CALCULO VISUALIZACAO
 
-		$qunt_resul_pg = 6;
+		$qunt_resul_pg = 5;
 
 		$inicio = ($qunt_resul_pg * $pagina) - $qunt_resul_pg;
 
@@ -61,9 +61,18 @@ include('conexao.php');
 
 			echo "id: ".$row_alunos['id']."<br/>";
 			echo "Nome: ".$row_alunos['nome_aluno']."<br/>";
-			echo "Email: ".$row_alunos['email']."<br/><hr>"; 
-			
+			echo "Email: ".$row_alunos['email']."<br/><hr>"; 	
 		}
+		//paginacao - soma a quantidade de alunos
+		$result_pg = " select count(id) num_result from alunos";
+		$resultado_pg = mysqli_query($conectar, $result_pg);
+		$row_pg = mysqli_fetch_assoc($resultado_pg);
+		// echo $row_pg ['num_result'];
+		$quantidade_pg = ceil($row_pg['num_result'] / $qunt_resul_pg);
+
+		$max_links = 2;
+		echo "<a href='listagem_alunos.php?pagina=1'>Primeira<a/>";
+
 		?>
 	</div>
 </SECTION>
