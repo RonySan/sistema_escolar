@@ -23,13 +23,22 @@ session_start();
 			<div class="aria_de_login">
 				<form action="login.php" method="POST">
 
-					<input class="in1" type="text" name="usuario" required placeholder="Username"/>
+					<input class="in1" type="text" type="email" name="usuario" required placeholder="Usuario ou email"/>
 					<br/><br/>
 					<input class="in2" type="password" name="senha" required placeholder="*******"/>
 					<br/><br/>
 					<input class="in3" type="submit" name="entrar" value="Entrar" />
 
 				</form>
+				<?php 
+				if ($_SESSION['STATUS_CADASTRO'] = true) {
+					echo "<div>usuario cadastrado </div>";
+				}else{
+					$_SESSION['USUARIO_EXISTE'] = true;
+					header('localtion: index.php');
+					exit;
+				}
+				?>
 				<div class="areabotton">
 					<a href="cadastro.php"><button class="cadastro">Cadastre-se</button></a>
 				</div>

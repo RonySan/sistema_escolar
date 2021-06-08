@@ -84,17 +84,21 @@ select{
 	display: flex;
 	
 }
-#lista{
+.contente{
+	background-color: #b3acfa;
 	display: flex;
 	justify-content:center;
-	width: 500px;
-	height: 300px;
+	width: 1040px;
+	height: 400px;
 
 }
-.list{
-	
-	justify-content:center;
+.lista{
+	flex:1;
+	align-items: center;
+	background-color: #fff;
 	width: 500px;
 	height: 300px;
-
+}
+.pagina{
+	display: flex;
 }

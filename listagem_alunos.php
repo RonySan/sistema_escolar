@@ -6,7 +6,7 @@ include('conexao.php');
 <!doctype html>
 <html>
 <head>
-	<title>cadastro de alunos</title>
+	<title>Listagem de Alunos</title>
 	<meta charset="UTF-8"/>
 	<link rel="stylesheet" href="assets/css/cadalu.css" />
 </head>
@@ -34,46 +34,74 @@ include('conexao.php');
 	
 </header>
 <body>
-<div class="barra">Listagem de aluno</div>
-<SECTION id="lista">
-	<div class="list">
+<div class="barra">Listagem de Alunos</div>
+<section class="geral">
+	<div class="contente">
+		<div class="listagem">
+			<div class="por">***</div>
+			<div class="pesquisa">///</div>
+			<div class="apenas">---</div>
+		</div>
+		<div class="lista">
 		<?php
-		if (isset($_SESSION['STATUS_CADASTRO'])) {
-			echo $_SESSION['STATUS_CADASTRO'];
-			unset($_SESSION['STATUS_CADASTRO']);
-			
+		if(isset($_SESSION['msg'])){
+			echo $_SESSION['msg'];
+			unset($_SESSION['msg']);
 		}
-
-
-		$pagina_atual = filter_input(INPUT_GET, 'pagina');
+		
+		//Receber o número da página
+		$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
 		$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
-
-	 	//CALCULO VISUALIZACAO
-
-		$qunt_resul_pg = 5;
-
-		$inicio = ($qunt_resul_pg * $pagina) - $qunt_resul_pg;
-
-
-		$result_alunos = "SELECT * FROM alunos LIMIT $inicio, $qunt_resul_pg";
+		
+		//Setar a quantidade de itens por pagina
+		$qnt_result_pg = 4;
+		
+		//calcular o inicio visualização
+		$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+		
+		$result_alunos = "SELECT * FROM alunos LIMIT $inicio, $qnt_result_pg";
 		$resultado_alunos = mysqli_query($conectar, $result_alunos);
-		while ($row_alunos = mysqli_fetch_assoc($resultado_alunos)) {
-
-			echo "id: ".$row_alunos['id']."<br/>";
-			echo "Nome: ".$row_alunos['nome_aluno']."<br/>";
-			echo "Email: ".$row_alunos['email']."<br/><hr>"; 	
+		while($row_alunos = mysqli_fetch_assoc($resultado_alunos)){
+			echo "ID: " . $row_alunos['id'] . "<br>";
+			echo "Nome: " . $row_alunos['nome_aluno'] . "<br>";
+			echo "E-mail: " . $row_alunos['email'] . "<br><hr>";
 		}
-		//paginacao - soma a quantidade de alunos
-		$result_pg = " select count(id) num_result from alunos";
+		
+		//Paginção - Somar a quantidade de usuários
+		$result_pg = "SELECT COUNT(id) AS num_result FROM alunos";
 		$resultado_pg = mysqli_query($conectar, $result_pg);
 		$row_pg = mysqli_fetch_assoc($resultado_pg);
-		// echo $row_pg ['num_result'];
-		$quantidade_pg = ceil($row_pg['num_result'] / $qunt_resul_pg);
-
+		//echo $row_pg['num_result'];
+		//Quantidade de pagina 
+		$quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
+		
+		//Limitar os link antes depois
 		$max_links = 2;
-		echo "<a href='listagem_alunos.php?pagina=1'>Primeira<a/>";
-
+		echo "<a href='listagem_alunos.php?pagina=1'>Primeira</a> ";
+		
+		for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
+			if($pag_ant >= 1){
+				echo "<a href='listagem_alunos.php?pagina=$pag_ant'>$pag_ant</a> ";
+			}
+		}
+			
+		echo "$pagina ";
+		
+		for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
+			if($pag_dep <= $quantidade_pg){
+				echo "<a href='listagem_alunos.php?pagina=$pag_dep'>$pag_dep</a> ";
+			}
+		}
+		
+		echo "<a href='listagem_alunos.php?pagina=$quantidade_pg'>Ultima</a>";
+		
 		?>
+		</div>
+		<div class="pagina">
+			<div class="matricula">matricula</div>
+			<div class="paginacao"> <12345>> </div>
+		</div>
 	</div>
+</section>
 </SECTION>
 </body>
