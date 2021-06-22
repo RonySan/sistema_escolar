@@ -1,45 +1,38 @@
 <?php
 session_start();
 ob_start();
-include_once './conexao.php';
+include_once ('conexao.php');
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-
 if (empty($id)) {
-    $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário não encontrado!</p>";
-    header("Location: index.php");
+    $_SESSION['msg'] = "<p style='color: #f00; font-size:15px; margin:0px; padding:0px;'>Erro Aluno nao encontrado!</p>";
+    header('location: listagem_alunos.php');
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Celke - Visualizar</title>
+        <title>Visualizar</title>
     </head>
     <body>
-        <a href="index.php">Listar</a><br>
+        <a href="listagem_alunos.php">Listar</a><br>
         <a href="cadastrar.php">Cadastrar</a><br>
 
         <h1>Visualizar</h1>
-
         <?php
-        $query_usuario = "SELECT id, nome, email FROM usuarios WHERE id = $id LIMIT 1";
-        $result_usuario = $conn->prepare($query_usuario);
-        $result_usuario->execute();
+        $query_alunos = "SELECT email, sexo, cod_matricula, matricula, turma, nome_pai, nome_mae, data_nascimento, valor_mensalidade, endereco, nome_aluno, foto
+                         FROM alunos WHERE id = $id LIMIT 1 ";
+        $result_aluno = $conectar->prepare($query_alunos);
+        $result_aluno->execute();
 
-        if (($result_usuario) AND ($result_usuario->rowCount() != 0)) {
-            $row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC);
-            //var_dump($row_usuario);
-            extract($row_usuario);
-            //echo "ID: " . $row_usuario['id'] . "<br>";            
-            echo "ID: $id <br>";
-            echo "Nome: $nome <br>";
-            echo "E-mail: $email <br>";
-        } else {
-            $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário não encontrado!</p>";
-            header("Location: index.php");
+        if (($result_aluno) and ($result_aluno->rowCount() !=0 )) {
+            $row_aluno = $result_aluno->fetch(pdo::fetch_assoc);
         }
         ?>
-    </body>
-</html>
+        
+        
+          </body>
+</html

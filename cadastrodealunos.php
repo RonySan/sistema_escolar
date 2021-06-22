@@ -18,7 +18,14 @@ include('veri_login.php');
 				<nav>
 					
 					<ul>
-						<li><A HREF="">ola Rony!!</A></li>
+						<li><A HREF=""><?php
+                    if(isset($_SESSION['nome'])):
+                     echo $_SESSION['nome'];
+                    ?>
+                    <?php
+                    endif;
+            		?>
+            	</A></li>
 						<li><a href="">perfil</a></li>
 						<li>
 							<a href="logout.php">
@@ -37,6 +44,9 @@ include('veri_login.php');
 <section class="geral">
 	<div class="content">
 		<div class="cadastro">
+			<div>
+				<a class="lis" href="listagem_alunos.php"><button class="lis">Lista de Alunos</button></a>
+			</div>
 			<form method="POST" action="cad_alunos.php" enctype="multipart/form-data">
 				<div class="form">
 					<div class="cad">
@@ -58,7 +68,7 @@ include('veri_login.php');
 						<input class="in5" type="text" name="matricula" required placeholder=""/>
 
 					</div>
-					<div class="cads">
+					<div class="cad">
 						<select class="int6" name="turma"placeholder="turma">
 							<option>defina a turma</option>
 							<option>A</option>
@@ -82,10 +92,13 @@ include('veri_login.php');
 				<div class="menudow">
 					<div class="contentmenu">
 						<input type="submit" value="Salvar"/>
-						<input type="reset" name="limpar" value="Cancelar">
+						<div class="contentmen">
+							<input type="reset" name="limpar" value="Cancelar">
+						</div>
+						
 					</div>
 				</div>
-			</form>	
+			</form>
 		</div>
 	</div>
 </section>

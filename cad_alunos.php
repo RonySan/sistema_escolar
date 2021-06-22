@@ -33,6 +33,7 @@ $sql = "INSERT INTO alunos (email, sexo, cod_matricula, matricula, turma, nome_p
 		$_SESSION['STATUS_CADASTRO' . "Aluno cadastrado com susseco !! "] = true;
 	}
 $conectar->close();
-
+	$_SESSION['msgcon'. "cadastro concluido"] ;
 	header('location:listagem_alunos.php');
+	
 	exit;

@@ -18,8 +18,20 @@ include('veri_login.php');
 			<nav>
 					
 				<ul>
-					<li><A HREF="">ola Rony!!</A></li>
-					<li><a href="">perfil</a></li>
+					<li><A HREF="">
+					
+					</A></li>
+					<li>
+						<?php
+                    if(isset($_SESSION['nome'])):
+                     echo $_SESSION['nome'];
+                    ?>
+
+                    <?php
+                    endif;
+            		?>
+						<a href="">perfil</a>
+					</li>
 					<li>
 						<a href="logout.php">
 							<button>Sair</button>

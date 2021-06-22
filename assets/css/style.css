@@ -25,7 +25,7 @@ section{
 }
 .content{
 	margin-top:130px;
-	display: flex;
+	/*display: flex;*/
 	justify-content:center;
 	background-color:#fbf5f5;
 }
@@ -49,4 +49,34 @@ section{
 }
 .in3{
 	background-color:#0596c5;
+}
+.notification{
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    font-size: 18px;
+    font-family: arial;
+    width: 347px;
+    height: 54px;
+    color: #fff;
+    background-color: green;
+    align-items: center;
+    margin-left: 55px;
+    text-align: center;
+}
+.avisocad{
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    font-size: 18px;
+    font-family: arial;
+    width: 347px;
+    height: 54px;
+    color: #fff;
+    background-color:  #fb0303;
+    align-items: center;
+    margin-left: 55px;
+    text-align: center;
 }

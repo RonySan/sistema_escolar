@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Aria de Cadastro</title>
+	<title>Tela de Cadastro</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=divice-width,initial-scale=1,shrink-to-fit=no"/>
 	<link rel="stylesheet" href="assets/css/stylecad.css">
@@ -19,15 +19,28 @@ session_start();
 			</div>
 		</div>
 		<div class="content">
+			
+            <?php
+                    if(isset($_SESSION['USUARIO_EXISTE'] )):
+                    ?>
+                    <div class="avisocad">
+                      <p>Usuario Ja cadastrado!!!.</p>
+                    </div>
+                    <?php
+                    endif;
+                    unset($_SESSION['USUARIO_EXISTE']);
+            ?>
 			<div class="aria_de_cadastro">
 				<form action="cadastrar.php" method="POST">
 
 					<input class="in1" type="text" name="nome" required placeholder="nome"/>
-					<br/><br/>
-					<input class="in2" type="text" name="usuario" required placeholder="Usuario"/>
-					<br/><br/>
+					<br/>
+					<input class="in2" type="text" name="usuario" required placeholder="Usuario ou email" />
+					<br/>
+					<input class="in2" type="email"  name="email" required placeholder="email"/>
+					<br/>
 					<input class="in3" type="password" name="senha" required placeholder="*******"/>
-					<br/><br/>
+					<br/>
 					<input class="in4" type="submit" name="cadastrar" value="Cadastrar" />
 
 				</form>
