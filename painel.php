@@ -18,7 +18,7 @@ include('veri_login.php');
 			<nav>
 					
 				<ul>
-					<li><A HREF="">
+					<li><A HREF="painel.php">
 					
 					</A></li>
 					<li>

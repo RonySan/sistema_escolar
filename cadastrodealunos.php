@@ -18,7 +18,7 @@ include('veri_login.php');
 				<nav>
 					
 					<ul>
-						<li><A HREF=""><?php
+						<li><A HREF="painel.php"><?php
                     if(isset($_SESSION['nome'])):
                      echo $_SESSION['nome'];
                     ?>
@@ -91,9 +91,10 @@ include('veri_login.php');
 
 				<div class="menudow">
 					<div class="contentmenu">
-						<input type="submit" value="Salvar"/>
+						<input class="in13" type="submit" value="Salvar"/>
+						
 						<div class="contentmen">
-							<input type="reset" name="limpar" value="Cancelar">
+							<input class="in14" type="reset" name="limpar" value="Cancelar">
 						</div>
 						
 					</div>

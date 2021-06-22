@@ -23,7 +23,7 @@ include('conexao.php');
 				<nav>
 					
 					<ul>
-						<li><A HREF=""><?php
+						<li><A HREF="painel.php"><?php
                     if(isset($_SESSION['nome'])):
                      echo $_SESSION['nome'];
                     ?>

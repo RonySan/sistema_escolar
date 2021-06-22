@@ -95,13 +95,18 @@ select{
     border-ratio: 3px;
     border-radius: 4px;
 	height: 60px;
-}/*
+}
 .lis{
 	height: 22px;
     position: fixed;
     margin-left: 130px;
+    margin-top: 109px;
+    background-color: #fffeff;
+    border: 2px solid #b3b4d3;
+    color: #7c6ecf;
+    border-radius: 3px;
 }
-*/
+
 .botao{
 	display: flex;
 }
@@ -167,8 +172,22 @@ a {
     color: #d7e903;
 
 }
-.in13, .in14{
+.in14{
 	height:20px;
+	height: 22px;
+    background-color: #fffeff;
+    border: 2px solid #b3b4d3;
+    color: #7c6ecf;
+    border-radius: 3px;
+}
+.in13{
+	height:20px;
+	height: 22px;
+	color:#fafcff;
+	background-color: #6558ff;
+	border: 2px solid #6558ff;
+	border-radius: 3px;
+	
 }
 .cadas{
 	text-decoration: none;
