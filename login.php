@@ -11,7 +11,7 @@ $usuario = mysqli_real_escape_string($conectar, $_POST['usuario']);
 $senha = mysqli_real_escape_string($conectar, $_POST['senha']);
 
 /*$query = "select usuario from usuario where usuario = '{$usuario}' and senhas = md5('{$senha}')";*/
-$verificador = "select nome from usuario where usuario = '{$usuario}' and senha = md5('{$senha}')";
+$verificador = "select nome from usuarios where usuario = '{$usuario}' and senha = md5('{$senha}')";
 
 $result = mysqli_query($conectar, $verificador);
 

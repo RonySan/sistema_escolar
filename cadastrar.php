@@ -8,7 +8,7 @@ $email= mysqli_real_escape_string($conectar, trim($_POST['email']));
 $senha = mysqli_real_escape_string($conectar, trim(md5($_POST['senha'])));
 
 
-$msql = "select count(*) as total from usuario where usuario = '$usuario'";
+$msql = "select count(*) as total from usuarios where usuario = '$usuario'";
 $result = mysqli_query($conectar, $msql);
 $row = mysqli_fetch_assoc($result);
 
@@ -18,7 +18,7 @@ if($row['total'] == 1) {
 	exit();
 
 } 
-$msql = "INSERT INTO usuario (usuario, senha, nome, email, data_cadastro) VALUES ('$usuario','$senha', '$nome', '$email', NOW())";
+$msql = "INSERT INTO usuarios (usuario, senha, nome, email, data_cadastro) VALUES ('$usuario','$senha', '$nome', '$email', NOW())";
 
 if($conectar->query($msql) === TRUE) {
 	$_SESSION['STATUS_CADASTRO'] = true;	

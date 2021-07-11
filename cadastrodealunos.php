@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('veri_login.php');
+include('conexao.php');
 ?>
 <!doctype html>
 <html>
@@ -65,18 +66,30 @@ include('veri_login.php');
 						<br/>
 						<input class="in4" type="email" name="email" required placeholder="email"/>
 
-						<input class="in5" type="text" name="matricula" required placeholder=""/>
+						<div class="sim-nao"> Aluno matriculado
+							<input id="sim-nao" name="matricula" class="sim-nao_checkbox" type="checkbox" />
+							<label for="sim-nao" class="sim-nao_botao"></label>
+						</div>
+						
 
 					</div>
 					<div class="cad">
-						<select class="int6" name="turma"placeholder="turma">
-							<option>defina a turma</option>
-							<option>A</option>
-							<option>B</option>
-							<option>C</option>
+						<select class="int6" name="turma" placeholder="turma">
+							<?php
+							
+									$sql="SELECT * FROM `turmas` ORDER BY `nomedaturma` DESC";
+									$res=mysqli_query($conectar, $sql);
+										while ($registro=mysqli_fetch_row($res)) {
+											$id=$registro[0];
+											$nome=$registro[1];
+										
+											echo "<option value=$nome>$nome</option>";
+											
+										}
+							?>
 						</select>
 						<br/>
-						<input class="in7" type="date" name="datamatricula" value="Data de Matricula" required placeholder="Data de Nascimento"/>Data de matricula
+						<input class="in7" type="date" name="datamatricula" value="Data de Matricula" required placeholder="Data de Matricula"/>Data de matricula
 						<br/>
 						<input class="in8" type="text" name="npai" required placeholder="Nome Completo do Pai"/>
 
