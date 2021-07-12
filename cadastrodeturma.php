@@ -51,7 +51,10 @@ include('veri_login.php');
 				<div class="form">
 					<div class="cad">
 						<input class="in1" type="text" name="nometurma" required placeholder="Nome da Turma"/>
-						<input class="in5" type="radio" name="turmacancelada" required placeholder="turmacancelada"/>Sim
+						<div class="sim-nao"> Status da Turma
+							<input id="sim-nao" name="status" class="sim-nao_checkbox" type="checkbox" />
+							<label for="sim-nao" name="status" class="sim-nao_botao"></label>
+						</div>
 					</div>
 					<div class="cad">
 						<select class="int6" name="turno"placeholder="turma">

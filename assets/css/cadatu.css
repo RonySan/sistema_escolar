@@ -189,6 +189,43 @@ a {
 	border-radius: 3px;
 	
 }
+.sim-nao_checkbox{
+	position:absolute;
+	left: -9999px;
+}
+.sim-nao_botao{
+	display: inline;-block;
+	vertical-align: middle;
+	position: relative;
+	cursor: pointer;
+}
+.sim-nao_botao::before,
+.sim-nao_botao::after{
+
+	content:"";
+}
+.sim-nao_botao::before{
+	display: inline-block;
+	width: 50px;
+	height: 30px;
+	background: #e79faa;
+	border-radius: 30px;
+}
+.sim-nao_botao::after{
+	position: absolute;
+	top:-12px;
+	left:4px;
+	width: 22px;
+	height: 22px;
+	background: #fff;
+	border-radius: 100%;
+}
+.sim-nao_checkbox:checked + .sim-nao_botao::before{
+	background: #1bae9c;
+}
+.sim-nao_checkbox:checked + .sim-nao_botao::after{
+	left: 23px;
+}
 .cadas{
 	text-decoration: none;
 

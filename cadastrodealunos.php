@@ -68,10 +68,8 @@ include('conexao.php');
 
 						<div class="sim-nao"> Aluno matriculado
 							<input id="sim-nao" name="matricula" class="sim-nao_checkbox" type="checkbox" />
-							<label for="sim-nao" class="sim-nao_botao"></label>
+							<label for="sim-nao" name="matricula" class="sim-nao_botao"></label>
 						</div>
-						
-
 					</div>
 					<div class="cad">
 						<select class="int6" name="turma" placeholder="turma">

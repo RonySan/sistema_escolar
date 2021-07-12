@@ -3,11 +3,18 @@ session_start();
 include("conexao.php");
 
 $nomedaturma = mysqli_real_escape_string( $conectar, trim($_POST['nometurma']));
-$statusdaturma = mysqli_real_escape_string($conectar, trim($_POST['turmacancelada']));
+$statusdaturma = mysqli_real_escape_string($conectar, trim($_POST['status']));
 $turno = mysqli_real_escape_string($conectar, trim($_POST['turno']));
 $datainicio = mysqli_real_escape_string($conectar, trim($_POST['datainicio']));
 $datatermino = mysqli_real_escape_string($conectar, trim($_POST['datatermino']));
 $valor = mysqli_real_escape_string($conectar, trim($_POST['valor']));
+
+if ($statusdaturma != null) {
+	$statusdaturma="Turma Ativa";
+}else{
+	$statusdaturma="Turma cancelada";
+}
+
 /*
 $sql = "select count(*) as total from alunos = '$email'";
 $result = mysqli_query($conectar, $sql);
