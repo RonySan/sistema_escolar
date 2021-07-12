@@ -101,7 +101,15 @@ include('conexao.php');
 							<td><?php echo $row_alunos['nome_aluno'] . "</br>";?></td>
 							<td><?php echo $row_alunos['email'] . "<br>";?></td>
 							<td><?php echo $row_alunos['valor_mensalidade'] . "<br>";?></td>
-							<td><?php echo $row_alunos['matricula'] . "</br>";?></td>
+							<td><?php echo $row_alunos['matricula'] . "</br>";
+								$matricula=['matricula'] ;
+							if ($row_alunos['matricula'] = $matricula) {
+								echo "matricula";
+							}
+							?>
+
+							</td>
+
 							<td><?php echo "<a class='lis' href='visualizar.php?id=$row_alunos[id] '>Visualizar</a> </br><hr>";?></td>
 						</tr>
 						</tbody>
