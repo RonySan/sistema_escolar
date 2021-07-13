@@ -102,10 +102,7 @@ include('conexao.php');
 							<td><?php echo $row_alunos['email'] . "<br>";?></td>
 							<td><?php echo $row_alunos['valor_mensalidade'] . "<br>";?></td>
 							<td><?php echo $row_alunos['matricula'] . "</br>";
-								$matricula=['matricula'] ;
-							if ($row_alunos['matricula'] = $matricula) {
-								echo "matricula";
-							}
+								
 							?>
 
 							</td>

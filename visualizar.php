@@ -32,7 +32,5 @@ if (empty($id)) {
             $row_aluno = $result_aluno->fetch(pdo::fetch_assoc);
         }
         ?>
-        
-        
-          </body>
+    </body>
 </html

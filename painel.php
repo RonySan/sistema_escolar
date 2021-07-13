@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('veri_login.php');
+//include('assets/js/dashbord.js')
 ?>
 <html>
 <head>
@@ -49,8 +50,13 @@ include('veri_login.php');
 						<h2>Grafico</h2>
 					</div>
 					<div>
-						<a href="dashboard.php">Dashboard</a>
+						<a class="linkpainel" href="dashboard.php">
+							<button class="buttonpainel">Dashboard</button>
+
+						<div id="myPieChart"/></div>
+					</a>
 					</div>
+
 				</div>
 
 				<div class="option2">
@@ -59,11 +65,13 @@ include('veri_login.php');
 							<h2>Alunos</h2>
 						</div>
 						<div>
-							<a class="" href="cadastrodealunos.php">Cadastrar Aluno</a>
+							<button class="buttonpainel"><a class="linkpainel" href="cadastrodealunos.php">Cadastrar Aluno</a></button>
 						</div>
+					</br>
 						<div>
-							<a href="listagem_alunos.php">Lista de Alunos</a>
+							<button class="buttonpainel"><a class="linkpainel" href="listagem_alunos.php">Lista de Alunos</a></button>
 						</div>
+					</br>
 					</div>
 				</div>
 
@@ -71,13 +79,16 @@ include('veri_login.php');
 					<div class="usuarios">
 						<h2>Usuarios</h2>
 						<div>
-							<a href="cadastrodeturma.php">Cadastrar nova turma</a>
+							<button class="buttonpainel"><a class="linkpainel" href="cadastrodeturma.php">Cadastrar nova turma</a></button>
 						</div>
+					</br>
 
 						<div>
-							<a href="listagem_turmas.php">Lista de Turmas</a>
+							<button class="buttonpainel"><a class="linkpainel" href="listagem_turmas.php">Lista de Turmas</a></button>
 						</div>
+					</br>
 					</div>
+
 				</div>
 			</div>
 		</div>

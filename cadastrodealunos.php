@@ -7,6 +7,7 @@ include('conexao.php');
 <html>
 <head>
 	<title>cadastro de alunos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta charset="UTF-8"/>
 	<link rel="stylesheet" href="assets/css/cadalu.css" />
 </head>
